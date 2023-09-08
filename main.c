@@ -1,33 +1,27 @@
 #include <stdio.h>
 
-//Calculez le montant total de la commande en fonction des choix des clients.
-//Chaque plat choisi doit être multiplié par le nombre d'invités.
-//Affichez l'addition qu'ils doivent régler
-
-
 int main() {
     int guest;
-    int couscous = 15;
-    int tomato = 8;
-    int risotto = 23;
-    int soda = 5;
-    int water = 2;
-    int lemonade = 12;
-    int tiramisu = 62;
-    int icecream = 3;
-    int macaroon = 8;
+    char meal;
+    char drink;
+    char dessert;
+    float addition;
+    float plat ;
+    float boisson;
+    float desserts;
 
 
     printf("Combien d'invités il y aura-t-il ?");
     scanf("%d", &guest);
     if (guest > 0 && guest <= 2) {
-        printf("Veuillez vous installer à la table numéro 1.");
+        printf("Veuillez vous installer à la table numéro 1.\n");
     } else if (guest > 2 && guest <= 4) {
-        printf("Veuillez vous installer à la table numéro 2.");
+        printf("Veuillez vous installer à la table numéro 2.\n");
     } else if (guest > 4 && guest <= 8) {
-        printf("Veuillez vous installer à la table numéro 3.");
+        printf("Veuillez vous installer à la table numéro 3.\n");
     } else {
-        printf("Malheureusement, notre restaurant ne peut pas vous recevoir.") ;
+        printf("Malheureusement, notre restaurant ne peut pas vous recevoir.\n") ;
+        return 0 ;
     }
 
     printf("Voici notre menu :\n "
@@ -43,9 +37,40 @@ int main() {
            "'t': tiramisu, 62$\n"
            "'g': glace, 3$\n"
            "'m': macaron, 8$\n");
-    printf ("Choisissez un plat, une boisson et un dessert.");
-    scanf("%d", &couscous, &tomato, &risotto, &soda, &water, &lemonade, &tiramisu, &icecream, &macaroon);
-    
+
+    printf("Choisissez un plat, puis une boisson, et enfin un dessert.\n");
+    scanf("%c", &meal);
+    scanf("%c", &drink);
+    scanf("%c", &dessert);
+
+    if ( meal == 'c' ) {
+        plat = 15 * guest ;
+    } else if ( meal == 't') {
+        plat = 8 * guest ;
+    } else {
+        plat = 23 * guest ;
+    }
+
+
+    if ( drink == 's' ) {
+        boisson = 5 * guest ;
+    } else if ( drink == 'e' ) {
+        boisson = 2 * guest ;
+    } else {
+        boisson = 12 * guest ;
+    }
+
+
+    if ( dessert == 't' ) {
+        desserts = 62 * guest ;
+    } else if ( dessert == 'g' ) {
+        desserts = 3 * guest ;
+    } else {
+        desserts = 8 * guest ;
+    }
+
+    addition = plat + desserts + boisson ;
+    printf("L'addition à régler sera de %.2f $.\n",addition) ;
 
     return 0;
 }
