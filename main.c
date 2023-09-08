@@ -69,7 +69,7 @@ int main() {
         desserts = 8 * guest ;
     }
 
-    addition = plat + desserts + boisson ;
+    addition = (plat) + (boisson) + (desserts) ;
     printf("L'addition à régler sera de %.2f $.\n",addition) ;
 
     return 0;
