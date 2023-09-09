@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int guest;
+    float guest;
     char meal;
     char drink;
     char dessert;
@@ -12,7 +12,7 @@ int main() {
 
 
     printf("Combien d'invités il y aura-t-il ?");
-    scanf("%d", &guest);
+    scanf(" %f", &guest);
     if (guest > 0 && guest <= 2) {
         printf("Veuillez vous installer à la table numéro 1.\n");
     } else if (guest > 2 && guest <= 4) {
@@ -39,37 +39,37 @@ int main() {
            "'m': macaron, 8$\n");
 
     printf("Choisissez un plat, puis une boisson, et enfin un dessert.\n");
-    scanf("%c", &meal);
-    scanf("%c", &drink);
-    scanf("%c", &dessert);
+    scanf(" %c", &meal);
+    scanf(" %c", &drink);
+    scanf(" %c", &dessert);
 
     if ( meal == 'c' ) {
-        plat = 15 * guest ;
+        plat = 15 ;
     } else if ( meal == 't') {
-        plat = 8 * guest ;
+        plat = 8 ;
     } else {
-        plat = 23 * guest ;
+        plat = 23 ;
     }
 
 
     if ( drink == 's' ) {
-        boisson = 5 * guest ;
+        boisson = 5 ;
     } else if ( drink == 'e' ) {
-        boisson = 2 * guest ;
+        boisson = 2 ;
     } else {
-        boisson = 12 * guest ;
+        boisson = 12 ;
     }
 
 
     if ( dessert == 't' ) {
-        desserts = 62 * guest ;
+        desserts = 62 ;
     } else if ( dessert == 'g' ) {
-        desserts = 3 * guest ;
+        desserts = 3 ;
     } else {
-        desserts = 8 * guest ;
+        desserts = 8  ;
     }
 
-    addition = (plat) + (boisson) + (desserts) ;
+    addition = (plat + boisson + desserts) * guest ;
     printf("L'addition à régler sera de %.2f $.\n",addition) ;
 
     return 0;
