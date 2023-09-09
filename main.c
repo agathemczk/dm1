@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    float guest;
+    int guest;
     char meal;
     char drink;
     char dessert;
@@ -12,7 +12,7 @@ int main() {
 
 
     printf("Combien d'invités il y aura-t-il ?");
-    scanf(" %f", &guest);
+    scanf(" %d", &guest);
     if (guest > 0 && guest <= 2) {
         printf("Veuillez vous installer à la table numéro 1.\n");
     } else if (guest > 2 && guest <= 4) {
